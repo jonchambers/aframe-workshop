@@ -67,13 +67,13 @@ To the Skybox:
 To a sphere:
 ```
 <a-entity
-geometry="primitive: sphere;”
-radius = “1;"
-position="0 1.35 -4;”
-material="src: #io”>
+  geometry="primitive: sphere;”
+  radius = “1;"
+  position="0 1.35 -4;”
+  material="src: #io”>
 </a-entity>
 ```
-Adding a video element:
+Adding a video element to the scene:
 ```
 <a-video src="#mountain" width="16" height="9" position="0 0 -10”></a-video>
 ```
