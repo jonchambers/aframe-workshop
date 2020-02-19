@@ -21,13 +21,65 @@ To create a WebVR scene in the index file, we need to add the <a-scene> tag betw
 
 All of our A-frame code will be added between the <a-scene> open and close tags.
 
-## Creating a shapes
+## Creating a shapes, skybox and text
 To create shapes we can use the <entity> tag. Most of the primitive object like boxes and spheres include their own tags (a-box, a-sphere), but we'll be using the entity tag. The code below will generate a sphere. A-Frame creates a default camera that’s positioned at XYZ coordinates 0, 0, 0, so we want to move this sphere away from the camera via the z axis, position="x y z;”
   
 ```
 <a-entity
-      geometry="primitive: sphere;"
-      radius = "1;"
-      position="0 1.5 -4;">
+  geometry="primitive: sphere;"
+  radius = "1;"
+  position="0 1.5 -4;">
 </a-entity>
+```
+To change the skybox color we can use color, images or video. We'll look at how to add an image and video below. 
+
+This will add a color to our skybox:
+```
+<a-sky color="#a442f4"></a-sky>
+```
+This will add text:
+```
+<a-text 
+  value="Hello!" 
+  color="#111" 
+  position="0 2.5 -2" 
+  align="center">
+</a-text>
+```
+## Adding images and video
+
+To add image and video textures we can use the assets tag to keep things organized.
+
+```
+<a-assets>
+  <img id="skyTexture" src=“images/starmap.jpg”>
+  <img id="io" src=“images/io.jpg”>
+  <video id="city" autoplay loop="true" src=“video/city.mp4"></video>
+  <video id=“mountain" autoplay loop="true" src=“video/mountain.mp4"></video>
+</a-assets>
+```
+We can then use the image and video asset ids to add the textures to our objects and skybox.
+
+To the Skybox:
+```
+<a-sky src="#skyTexture"></a-sky>
+```
+To a sphere:
+```
+<a-entity
+geometry="primitive: sphere;”
+radius = “1;"
+position="0 1.35 -4;”
+material="src: #io”>
+</a-entity>
+```
+Adding a video element:
+```
+<a-video src="#mountain" width="16" height="9" position="0 0 -10”></a-video>
+```
+
+Adding a 360 Video as skybox:
+
+```
+<a-videosphere src=“#city"></a-videosphere>
 ```
