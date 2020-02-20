@@ -9,7 +9,7 @@ To open it while viewing your scene:
 ctrl + alt + i
 
 ## Creating a scene
-To create a WebVR scene in the index file, we need to add the <a-scene> tag between the body tag:
+To create a WebVR scene in the index file, we need to add the a-scene tag between the body tag:
 
 ```
 <body>
@@ -82,4 +82,110 @@ Adding a 360 Video as skybox:
 
 ```
 <a-videosphere src=“#city"></a-videosphere>
+```
+## Adding 3D models to your scene
+Adding models to A-Frame requires that you use .obj or .gltf formats. OBJ files are more common, but GLTF are made for using in the browser. Both will work though. The code below should be added in your assets tag like we did with the images and video. 
+
+Loading the obj with its mtl material file in the a-assets tag:
+
+```
+<a-asset-item id="tower-obj" src="models/model.obj"></a-asset-item>
+<a-asset-item id="tower-mtl" src=“models/materials.mtl"></a-asset-item>
+```
+
+Loading a gltf:
+```
+<a-asset-item id="tower-gltf" src="models/model.gltf"></a-asset-item>
+```
+
+Then Load them using an entity.
+
+Obj:
+```
+<a-entity 
+  obj-model="obj: #tower-obj; mtl: #tower-mtl"
+  position="0 0 0"
+  rotation="0 0 0"
+  scale="1 1 1">
+</a-entity>
+```
+GLTF:
+```
+<a-entity 
+  gltf-model="#tower-gltf"
+  position="0 0 0"
+  rotation="0 0 0"
+  scale="1 1 1">
+</a-entity>
+```
+##Animating
+Animation in A-frame requires the use of the animation component. The sphere below with the texture of a-frame animationIo will rotate 360 degrees on it’s y axis. It will take 15000 milliseconds and loop.
+```
+<a-entity 
+  geometry="primitive: sphere;"
+  radius="1;"
+  material="src: #io"
+  position="1 1.5 -3"
+  animation="property: rotation;
+             to: 0 360 0;
+             dur: 15000;
+             easing: linear;
+             loop: true;">
+</a-entity>
+```
+More on animations can be found [here](https://aframe.io/docs/1.0.0/components/animation.html)
+
+## A-Frame Registry
+A bunch of different libraries that expand the functionality of A-Frame are available through its registry:
+
+[https://aframe.io/aframe-registry/](https://aframe.io/aframe-registry/)
+
+Some useful ones:
+
+[Physics](https://www.npmjs.com/package/aframe-physics-system)
+
+[Particle System](https://www.npmjs.com/package/aframe-particle-system-component)
+
+[Environments](https://www.npmjs.com/package/aframe-environment-component)
+
+[Text Geometry](https://www.npmjs.com/package/aframe-text-geometry-component)
+
+The [Extras](https://github.com/donmccurdy/aframe-extras) library includes different controller navigation.
+
+
+To add basic physics to our project, you’ll need to include the physics library. Then in your a-scene tag add physics component:
+```
+<a-scene physics>
+```
+You can then add dynamic-body or static-body to your objects. Static bodies will include collision information, but will stay in the same place in the scene. The box below will fall when the page is loaded:
+```
+<a-entity dynamic-body
+  geometry="primitive: box;"
+  position=".75 4 -3;"
+</a-entity>
+```
+
+To add particle systems to our project, you’ll need to include the particle system library.
+
+Then, create an entity that includes a particle system. Just an FYI, these are pretty processor intensive.
+```
+<a-entity 
+  position="0 2.25 -15" 
+  particle-system="preset: snow; size:5">
+</a-entity>
+```
+
+To add an environment to your project, you’ll need to include the environment component library.
+
+Then, create an entity that includes an environment preset.
+```
+<a-entity environment="preset: tron"></a-entity>
+```
+
+You can also add 3D text to you project by using the Text Geometry component library:
+```
+<a-entity 
+  text-geometry="value: Hello World!” 
+  position="0 5 -2">
+</a-entity>
 ```
