@@ -52,10 +52,10 @@ To add image and video textures we can use the assets tag to keep things organiz
 
 ```
 <a-assets>
-  <img id="skyTexture" src=“images/starmap.jpg”>
-  <img id="io" src=“images/io.jpg”>
-  <video id="city" autoplay loop="true" src=“video/city.mp4"></video>
-  <video id=“mountain" autoplay loop="true" src=“video/mountain.mp4"></video>
+  <img id="skyTexture" src="images/starmap.jpg">
+  <img id="io" src="images/io.jpg">
+  <video id="city" autoplay loop="true" src="video/city.mp4"></video>
+  <video id=“mountain" autoplay loop="true" src="video/mountain.mp4"></video>
 </a-assets>
 ```
 We can then use the image and video asset ids to add the textures to our objects and skybox.
@@ -67,21 +67,21 @@ To the Skybox:
 To a sphere:
 ```
 <a-entity
-  geometry="primitive: sphere;”
-  radius = “1;"
-  position="0 1.35 -4;”
-  material="src: #io”>
+  geometry="primitive: sphere;"
+  radius = "1;"
+  position="0 1.35 -4;"
+  material="src: #io">
 </a-entity>
 ```
 Adding a video element to the scene:
 ```
-<a-video src="#mountain" width="16" height="9" position="0 0 -10”></a-video>
+<a-video src="#mountain" width="16" height="9" position="0 0 -10"></a-video>
 ```
 
 Adding a 360 Video as skybox:
 
 ```
-<a-videosphere src=“#city"></a-videosphere>
+<a-videosphere src="#city"></a-videosphere>
 ```
 ## Adding 3D models to your scene
 Adding models to A-Frame requires that you use .obj or .gltf formats. OBJ files are more common, but GLTF are made for using in the browser. Both will work though. The code below should be added in your assets tag like we did with the images and video. 
@@ -90,7 +90,7 @@ Loading the obj with its mtl material file in the a-assets tag:
 
 ```
 <a-asset-item id="tower-obj" src="models/model.obj"></a-asset-item>
-<a-asset-item id="tower-mtl" src=“models/materials.mtl"></a-asset-item>
+<a-asset-item id="tower-mtl" src="models/materials.mtl"></a-asset-item>
 ```
 
 Loading a gltf:
@@ -185,7 +185,7 @@ Then, create an entity that includes an environment preset.
 You can also add 3D text to you project by using the Text Geometry component library:
 ```
 <a-entity 
-  text-geometry="value: Hello World!” 
+  text-geometry="value: Hello World!" 
   position="0 5 -2">
 </a-entity>
 ```
