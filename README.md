@@ -118,7 +118,7 @@ GLTF:
   scale="1 1 1">
 </a-entity>
 ```
-##Animating
+## Animating
 Animation in A-frame requires the use of the animation component. The sphere below with the texture of a-frame animationIo will rotate 360 degrees on it’s y axis. It will take 15000 milliseconds and loop.
 ```
 <a-entity 
