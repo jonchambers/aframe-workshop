@@ -55,7 +55,7 @@ To add image and video textures we can use the assets tag to keep things organiz
   <img id="skyTexture" src="images/starmap.jpg">
   <img id="io" src="images/io.jpg">
   <video id="city" autoplay loop="true" src="video/city.mp4"></video>
-  <video id=“mountain" autoplay loop="true" src="video/mountain.mp4"></video>
+  <video id="mountain" autoplay loop="true" src="video/mountain.mp4"></video>
 </a-assets>
 ```
 We can then use the image and video asset ids to add the textures to our objects and skybox.
