@@ -189,3 +189,14 @@ You can also add 3D text to you project by using the Text Geometry component lib
   position="0 5 -2">
 </a-entity>
 ```
+## VR Controllers 
+To add VR movement controls we need to include the Extras library. Then we need to override our default camera and create a camera rig entity and embed a camera inside it:
+```
+<a-entity id="cameraRig" wasd-controls movement-controls>
+
+        <a-entity camera look-controls position="0 1.7 0"></a-entity>
+
+</a-entity>
+```
+Adding the wasd-controls will allow for browser based navigations while adding the movement-controls will allow for basic VR navigation 
+
