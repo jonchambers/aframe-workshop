@@ -204,10 +204,13 @@ Adding teleport capabilities requires the [teleport-controls library](https://ww
 
 ```
 <a-entity id="cameraRig">
+
       <a-entity id="head" camera="active: true" look-controls wasd-controls position="0 1.6 0"></a-entity>
       <a-entity oculus-touch-controls="hand: left" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
       <a-entity oculus-touch-controls="hand: right" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
       <a-entity vive-controls="hand: left" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-      <a-entity vive-controls="hand: right" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity></a-entity>
+      <a-entity vive-controls="hand: right" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity
+
+</a-entity>
 ```
 In the example above, I've added the capabilities to use the Oculus and HTC Vive touch controls to trigger the teleport. 
