@@ -272,4 +272,5 @@ Below, we’re creating a cursor and when the cursor hovers over the smaller ima
     raycaster="objects: .plane"></a-entity>
 <a-entity>
  ```
- 
+
+For more complex interactions, like grabbing objects and throwing them, check out the [super hands compontent](https://wmurphyrd.github.io/aframe-super-hands-component/examples/) ^_^
