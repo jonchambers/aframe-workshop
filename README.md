@@ -270,6 +270,6 @@ Below, we’re creating a cursor and when the cursor hovers over the smaller ima
   <a-entity id="rightHand"
     laser-controls="hand: right"
     raycaster="objects: .plane"></a-entity>
-  <a-entity>
+<a-entity>
  ```
  
