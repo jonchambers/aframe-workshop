@@ -215,5 +215,61 @@ Adding teleport capabilities requires the [teleport-controls library](https://ww
 ```
 In the example above, I've added the capabilities to use the Oculus and HTC Vive touch controls to trigger the teleport. 
 
-##VR Interactions
-We can add some interaction in our scene by using gaze based raycasting and laser pointers. 
+## VR Interactions
+We can add some simple interaction in our scene by using gaze based raycasting and laser pointers. To use both types of interaction, we need to include the [event-set-components](https://www.npmjs.com/package/aframe-event-set-component) file.
+
+Below, we’re creating a cursor and when the cursor hovers over the smaller images/planes, the larger image texture will change. In small image entities, we use the mouseenter event and target the #mainImg id and change it's material source. The cursor is using raycasting to only trigger when it hovers over an item with the class .plane.  
+
+```
+<a-entity id="mainImg"
+  geometry="primitive: plane; width: 5; height: 5;"
+  material="src: #starmap;"
+  position="4 1.25 -2"></a-entity>
+
+<a-entity id="sel1" class="plane"
+  geometry="primitive: plane; width: 1; height: 1;"
+  material="src: #mars;"
+  event-set__1="_event: mouseenter; _target: #mainImg; material.src: #mars"
+  position="0 3 -2"></a-entity>
+
+<a-entity id="sel2" class="plane"
+  geometry="primitive: plane; width: 1; height: 1"
+  material="src: #io;"
+  event-set__1="_event: mouseenter; _target: #mainImg; material.src: #io"
+  position="0 0 -2"></a-entity>
+
+<a-entity camera look-controls position="0 1.75 4">
+  <a-cursor color="red"
+    event-set__1="_event: mouseenter; color: lime"
+    event-set__2="_event: mouseleave; color: red"
+    raycaster="objects: .plane"></a-cursor>
+</a-entity>
+```
+        
+ In the code below, we are doing a similar thing but using the laser pointer and click events to change the skybox image.
+```
+<a-sky id="bg" src="#starmap"></a-sky>
+ 
+<a-entity id="sel1" class="plane"
+  geometry="primitive: plane; width: 1; height: 1;"
+  material="src: #mars;"
+  event-set__1="_event: click; _target: #bg; src: #mars"
+  position="0 3 -2"></a-entity>
+
+<a-entity id="sel2" class="plane"
+  geometry="primitive: plane; width: 1; height: 1"
+  material="src: #io;"
+  event-set__1="_event: click; _target:  #bg; src: #io"
+  position="0 0 -2"></a-entity>
+
+<a-entity id="cameraRig" position="0 1.75 4">
+  <a-entity  camera look-controls wasd-controls></a-entity>
+  <a-entity id="leftHand"
+    laser-controls="hand: left"
+    raycaster="objects: .plane"></a-entity>
+  <a-entity id="rightHand"
+    laser-controls="hand: right"
+    raycaster="objects: .plane"></a-entity>
+  <a-entity>
+ ```
+ 
