@@ -214,3 +214,6 @@ Adding teleport capabilities requires the [teleport-controls library](https://ww
 </a-entity>
 ```
 In the example above, I've added the capabilities to use the Oculus and HTC Vive touch controls to trigger the teleport. 
+
+##VR Interactions
+We can add some interaction in our scene by using gaze based raycasting and laser pointers. 
