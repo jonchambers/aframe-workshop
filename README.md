@@ -1,4 +1,4 @@
-# A-Frame Workshop 
+# A-Frame Workshop
 
 [A-Frame](https://aframe.io/) is a library built on top of [three.js](https://threejs.org/), which is built with [WebGL](https://www.khronos.org/webgl/), and uses its own html tags to generate 3D objects and scenes. It uses an entity and component system: components can be added to an empty entity. In HTML terms, the entities are like the tags and the components are like the different attributes that you can add to tags.
 
@@ -115,7 +115,7 @@ GLTF:
   gltf-model="#tower-gltf"
   position="0 0 0"
   rotation="0 0 0"
-  scale="1 1 1">
+  scale="1 1 1"> 
 </a-entity>
 ```
 More on 3D models can be found [here](https://aframe.io/docs/1.2.0/introduction/models.html)
@@ -127,7 +127,7 @@ Animation in A-frame requires the use of the animation component. The sphere bel
   geometry="primitive: sphere;"
   radius="1;"
   material="src: #io"
-  position="1 1.5 -3" 
+  position="1 1.5 -3"
   animation="property: rotation;
              to: 0 360 0;
              dur: 15000;
