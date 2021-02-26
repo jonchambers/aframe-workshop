@@ -1,4 +1,4 @@
-# A-Frame Workshop
+# A-Frame Workshop 
 
 [A-Frame](https://aframe.io/) is a library built on top of [three.js](https://threejs.org/), which is built with [WebGL](https://www.khronos.org/webgl/), and uses its own html tags to generate 3D objects and scenes. It uses an entity and component system: components can be added to an empty entity. In HTML terms, the entities are like the tags and the components are like the different attributes that you can add to tags.
 
