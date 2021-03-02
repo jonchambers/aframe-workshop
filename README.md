@@ -115,7 +115,7 @@ GLTF:
   gltf-model="#tower-gltf"
   position="0 0 0"
   rotation="0 0 0"
-  scale="1 1 1"> 
+  scale="1 1 1">
 </a-entity>
 ```
 More on 3D models can be found [here](https://aframe.io/docs/1.2.0/introduction/models.html)
@@ -154,7 +154,7 @@ Some useful ones:
 
 The [Extras](https://github.com/donmccurdy/aframe-extras) library includes different controller navigation.
 
-
+## Adding Physics
 To add basic physics to our project, you’ll need to include the physics library. Then in your a-scene tag add physics component:
 ```
 <a-scene physics>
@@ -166,7 +166,7 @@ You can then add dynamic-body or static-body to your objects. Static bodies will
   position=".75 4 -3;"
 </a-entity>
 ```
-
+## Adding the Particle System
 To add particle systems to our project, you’ll need to include the particle system library.
 
 Then, create an entity that includes a particle system. Just an FYI, these are pretty processor intensive.
@@ -176,7 +176,7 @@ Then, create an entity that includes a particle system. Just an FYI, these are p
   particle-system="preset: snow; size:5">
 </a-entity>
 ```
-
+## Adding An Environment
 To add an environment to your project, you’ll need to include the environment component library.
 
 Then, create an entity that includes an environment preset.
@@ -184,6 +184,7 @@ Then, create an entity that includes an environment preset.
 <a-entity environment="preset: tron"></a-entity>
 ```
 
+## 3D Text
 You can also add 3D text to you project by using the Text Geometry component library:
 ```
 <a-entity
@@ -191,6 +192,7 @@ You can also add 3D text to you project by using the Text Geometry component lib
   position="0 5 -2">
 </a-entity>
 ```
+
 ## VR Controllers
 To add VR movement controls we need to include the Extras library. Then we need to override our default camera and create a camera rig entity and embed a camera inside it. This will allow for browser based navigations, while adding the movement-controls will allow for basic VR navigation.:
 ```
@@ -200,7 +202,7 @@ To add VR movement controls we need to include the Extras library. Then we need 
 </a-entity>
 ```
 
-Adding teleport capabilities requires the [teleport-controls library](https://www.npmjs.com/package/aframe-teleport-controls). After adding that to your html pages head tag, you can add the teleport controlls like this:
+Adding teleport capabilities requires the [teleport-controls library](https://www.npmjs.com/package/aframe-teleport-controls). After adding that to your html pages head tag, you can add the teleport controls like this:
 
 ```
 <a-entity id="cameraRig">
